@@ -1,0 +1,393 @@
+/* Estilos gerais do corpo */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #1d1c1c;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif; /* Aplicando Montserrat ao corpo */
+}
+
+/* Logo no canto superior esquerdo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px; /* Tamanho aumentado */
+  height: 120px; /* Adicionamos altura para igualar à largura */
+  z-index: 10;
+  overflow: hidden; /* Esconde qualquer parte da imagem que exceda os limites do contêiner */
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha todo o contêiner sem distorcer */
+}
+
+
+/* Contêiner central */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Espaço para a logo */
+}
+
+/* Título dentro do formulário */
+.title {
+  color: #fff;
+  font-size: 2.5vw;
+  margin-bottom: 20px;
+  font-family: 'Comic Neue', cursive; /* Aplicando a fonte Comic Neue */
+  font-weight: 900; /* Aumentando a espessura da fonte */
+  text-align: center;
+  margin-top: -20px; /* Movendo o título mais para cima */
+}
+
+/* Estilos do formulário */
+.form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5vw 3vw;
+  background: #0b2447;
+  border-radius: 10px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+  align-items: center;
+}
+
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(-10deg);
+    opacity: 1;
+  }
+}
+
+/* Estilos dos inputs */
+.input {
+  width: 100%;
+  padding: 1.5vw 1vw;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #3b8df2;
+  color: #fff;
+  font-size: 1.2vw;
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.input::placeholder {
+  color: #fff;
+  font-size: 1.2vw;
+}
+
+.input:hover,
+.input:focus {
+  border-color: #3b8df2;
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+  outline: none;
+}
+
+/* Estilos do botão */
+button {
+  width: 100%;
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.6vw;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: #0077be;
+  font-size: 1.7vw;
+  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* Estilos do texto de cadastro */
+.signup-text {
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2vw;
+}
+
+.signup-text a {
+  color: #3b8df2;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos das formas geométricas */
+.shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.5;
+}
+
+/* Animação de mudança de cor com duração aumentada */
+@keyframes colorChange {
+  0%   { background-color: red; }
+  25%  { background-color: blue; }
+  50%  { background-color: white; }
+  75%  { background-color: red; }
+  100% { background-color: blue; }
+}
+
+@keyframes colorChangeBorder {
+  0%   { border-bottom-color: red; }
+  25%  { border-bottom-color: blue; }
+  50%  { border-bottom-color: white; }
+  75%  { border-bottom-color: red; }
+  100% { border-bottom-color: blue; }
+}
+
+@keyframes colorChangeX {
+  0%   { color: red; }
+  25%  { color: blue; }
+  50%  { color: white; }
+  75%  { color: red; }
+  100% { color: blue; }
+}
+
+/* Triângulos */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  animation: colorChangeBorder 20s infinite; /* Aumentando a duração */
+}
+
+.triangle1 {
+  border-bottom: 100px solid red;
+  top: 10%;
+  left: 20%;
+  animation: move1 15s infinite alternate ease-in-out, colorChangeBorder 20s infinite;
+}
+
+.triangle2 {
+  border-bottom: 100px solid white;
+  top: 50%;
+  left: 80%;
+  animation: move2 17s infinite alternate-reverse ease-in-out, colorChangeBorder 20s infinite;
+}
+
+.triangle3 {
+  border-bottom: 100px solid blue;
+  top: 25%;
+  left: 40%;
+  animation: move3 19s infinite alternate ease-in-out, colorChangeBorder 20s infinite;
+}
+
+/* Quadrados */
+.square {
+  width: 80px;
+  height: 80px;
+  animation: colorChange 20s infinite; /* Aumentando a duração */
+}
+
+.square1 {
+  background-color: red;
+  top: 30%;
+  left: 50%;
+  animation: move4 15s infinite alternate-reverse ease-in-out, colorChange 20s infinite;
+}
+
+.square2 {
+  background-color: white;
+  top: 70%;
+  left: 10%;
+  animation: move5 17s infinite alternate ease-in-out, colorChange 20s infinite;
+}
+
+.square3 {
+  background-color: blue;
+  top: 15%;
+  left: 70%;
+  animation: move6 19s infinite alternate-reverse ease-in-out, colorChange 20s infinite;
+}
+
+/* Círculos */
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation: colorChange 20s infinite; /* Aumentando a duração */
+}
+
+.circle1 {
+  background-color: red;
+  top: 60%;
+  left: 70%;
+  animation: move7 15s infinite alternate ease-in-out, colorChange 20s infinite;
+}
+
+.circle2 {
+  background-color: white;
+  top: 20%;
+  left: 40%;
+  animation: move8 17s infinite alternate-reverse ease-in-out, colorChange 20s infinite;
+}
+
+.circle3 {
+  background-color: blue;
+  top: 35%;
+  left: 15%;
+  animation: move9 19s infinite alternate ease-in-out, colorChange 20s infinite;
+}
+
+/* X-Shapes */
+.x-shape {
+  width: 80px;
+  height: 80px;
+  animation: colorChangeX 20s infinite; /* Aumentando a duração */
+}
+
+.x-shape1 {
+  top: 80%;
+  left: 30%;
+  animation: move13 16s infinite alternate-reverse ease-in-out, colorChangeX 20s infinite;
+}
+
+.x-shape2 {
+  top: 40%;
+  left: 60%;
+  animation: move14 18s infinite alternate ease-in-out, colorChangeX 20s infinite;
+}
+
+.x-shape3 {
+  top: 55%;
+  left: 25%;
+  animation: move15 20s infinite alternate-reverse ease-in-out, colorChangeX 20s infinite;
+}
+
+.x-shape::before,
+.x-shape::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 10px;
+  background-color: currentColor; /* Usa a cor definida na classe */
+  top: 35px;
+  left: 0;
+}
+
+.x-shape::before {
+  transform: rotate(45deg);
+}
+
+.x-shape::after {
+  transform: rotate(-45deg);
+}
+
+/* Animações de movimento */
+
+/* Triângulos */
+@keyframes move1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(20vw, 20vh) rotate(360deg); }
+}
+
+@keyframes move2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-25vw, -15vh) rotate(-360deg); }
+}
+
+@keyframes move3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(15vw, -25vh) rotate(360deg); }
+}
+
+/* Quadrados */
+@keyframes move4 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-30vw, 15vh) rotate(-360deg); }
+}
+
+@keyframes move5 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-15vw, 25vh) rotate(360deg); }
+}
+
+@keyframes move6 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30vw, -20vh) rotate(-360deg); }
+}
+
+/* Círculos */
+@keyframes move7 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(25vw, -25vh) scale(1.5); }
+}
+
+@keyframes move8 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20vw, 20vh) scale(0.5); }
+}
+
+@keyframes move9 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30vw, 15vh) scale(1.2); }
+}
+
+/* X-Shapes */
+@keyframes move13 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(25vw, 25vh) rotate(360deg); }
+}
+
+@keyframes move14 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-20vw, -20vh) rotate(-360deg); }
+}
+
+@keyframes move15 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30vw, -30vh) rotate(360deg); }
+}
