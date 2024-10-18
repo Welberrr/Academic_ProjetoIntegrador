@@ -9,54 +9,81 @@ body {
   font-family: 'Montserrat', sans-serif; /* Aplicando Montserrat ao corpo */
 }
 
-/* Logo no canto superior esquerdo */
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 120px;
-  height: 120px;
-  z-index: 10;
-  overflow: hidden;
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* Contêiner central */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; /* Centraliza verticalmente */
-  height: 100vh; /* Ocupa a altura total da viewport */
+  min-height: 100vh; /* Ocupa a altura total da viewport */
 }
 
-/* Título dentro do formulário */
+/* Novo contêiner para o título e a imagem */
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  position: relative;
+  margin-bottom: -10px; /* Ajuste para aproximar o subtítulo */
+}
+
+/* Estilos do título */
 .title {
   font-size: 80px;
-  margin-bottom: 20px;
   font-family: 'Pirata One', cursive;
   text-align: center;
-  margin-top: -20px;
   letter-spacing: 5px; /* Aumenta o espaçamento entre as letras */
-  background: linear-gradient(to right, #8B4513 0%, #A0522D 50%, #8B4513 100%); /* Gradiente centralizado */
+  background: linear-gradient(to right, #9cb6ff 0%, #5a78ff 50%, #9cb6ff 100%); /* Gradiente centralizado */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; /* Para compatibilidade com outros navegadores */
+  text-fill-color: transparent;
+  margin: 0; /* Remove margens padrão */
+}
+
+/* Estilos para a imagem da âncora */
+.pendulum {
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  margin-left: 20px; /* Ajuste do espaço entre o título e a imagem */
+  animation: pendulum-swing 2s infinite ease-in-out;
+  transform-origin: top center; /* Ponto de pivô para a rotação */
+}
+
+/* Animação do pêndulo */
+@keyframes pendulum-swing {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+/* Estilos do subtítulo */
+.subtitle {
+  font-size: 50px; /* Ajuste o tamanho conforme necessário */
+  margin-bottom: 20px;
+  margin-top: -10px; /* Aproxima o subtítulo do título */
+  font-family: 'Pirata One', cursive;
+  text-align: center;
+  letter-spacing: 5px;
+  background: linear-gradient(to right, #9cb6ff 0%, #5a78ff 50%, #9cb6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-fill-color: transparent;
 }
 
 /* Estilos do formulário */
 .form {
-  width: 30vw;
+  width: 35vw; /* Aumentado para aumentar a largura do formulário */
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 5vw 3vw;
+  padding: 3vw 2vw;
   background: rgba(11, 36, 71, 0.9); /* Fundo semi-transparente */
   border-radius: 10px;
   overflow: hidden;
@@ -112,6 +139,30 @@ body {
   outline: none;
 }
 
+/* Container para o campo de senha com tooltip */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container .tooltip {
+  display: none;
+  position: absolute;
+  top: -5px;
+  right: 105%;
+  width: 250px;
+  background-color: rgba(0, 0, 50, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9vw;
+  z-index: 1;
+}
+
+.password-container:hover .tooltip {
+  display: block;
+}
+
 /* Estilos do botão */
 button {
   width: 100%;
@@ -127,7 +178,7 @@ button {
     rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  margin-top: 30px;
+  margin-top: 30px; /* Restaurando o espaço superior */
 }
 
 button:hover {
@@ -142,7 +193,7 @@ button:hover {
 
 /* Estilos do texto de cadastro */
 .signup-text {
-  margin-top: 20px;
+  margin-top: 20px; /* Restaurando o espaço superior */
   text-align: center;
   color: #fff;
   font-size: 1.2vw;
@@ -204,6 +255,7 @@ button:hover {
   animation: colorChangeBorderSea 20s infinite;
 }
 
+/* Triângulos Existentes */
 .triangle1 {
   border-bottom: 100px solid #0077be;
   top: 10%;
@@ -542,4 +594,79 @@ button:hover {
 @keyframes move24 {
   0% { transform: translate(0, 0) rotate(0deg); }
   100% { transform: translate(-25vw, -15vh) rotate(-360deg); }
+}
+
+/* Estilos para o pop-up de erro */
+.popup {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 50, 0.8); /* Fundo semi-transparente */
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  background-color: #0b2447;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #3b8df2;
+  width: 30%;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  animation: popup-animation 0.5s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+@keyframes popup-animation {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.popup-content h2 {
+  font-family: 'Pirata One', cursive;
+  margin-bottom: 20px;
+  font-size: 2vw;
+}
+
+.popup-content p {
+  font-size: 1.2vw;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 80%;
+  }
+  .popup-content h2 {
+    font-size: 5vw;
+  }
+  .popup-content p {
+    font-size: 3vw;
+  }
+  .close-button {
+    font-size: 5vw;
+  }
 }

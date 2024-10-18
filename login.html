@@ -13,12 +13,6 @@
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <!-- Espaço para a logo no canto superior esquerdo -->
-  <div class="logo">
-    <!-- Substitua pela imagem da sua logo -->
-    <img src="1-d1d79e99-removebg-preview.png" alt="Logo">
-  </div>
-
   <!-- Formas geométricas de fundo -->
   <div class="shapes">
     <!-- Triângulos -->
@@ -54,10 +48,14 @@
   <!-- Contêiner para o conteúdo centralizado -->
   <div class="container">
     <!-- Formulário com o título dentro -->
-    <form class="form">
-      <h1 class="title">PIRATE PASS</h1>
+    <form class="form" id="formLogin">
+      <div class="title-container">
+        <h1 class="title">PIRATE PASS</h1>
+        <img src="Ancora.png" alt="Âncora" class="pendulum">
+      </div>
+      <h2 class="subtitle">LOGIN</h2>
       <input type="email" class="input" placeholder="Digite seu email" required>
-      <input type="password" class="input" placeholder="Digite sua senha" required>
+      <input type="password" class="input" id="senhaLogin" placeholder="Digite sua senha" required>
       <button type="submit">Entrar</button>
       <!-- Texto de cadastro -->
       <p class="signup-text">
@@ -65,5 +63,17 @@
       </p>
     </form>
   </div>
+
+  <!-- Pop-up de erro -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup" class="close-button">&times;</span>
+      <h2>Erro no Login</h2>
+      <p id="popupMessage"></p>
+    </div>
+  </div>
+
+  <!-- Importando o arquivo JavaScript externo -->
+  <script src="login.js"></script>
 </body>
 </html>

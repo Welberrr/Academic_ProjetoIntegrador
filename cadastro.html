@@ -13,15 +13,8 @@
   <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-  <!-- Espaço para a logo no canto superior esquerdo -->
-  <div class="logo">
-    <!-- Substitua pela imagem da sua logo -->
-    <img src="1-d1d79e99-removebg-preview.png" alt="Logo">
-  </div>
-
   <!-- Formas geométricas de fundo -->
- <!-- Formas geométricas de fundo -->
-<div class="shapes">
+  <div class="shapes">
     <!-- Triângulos -->
     <div class="shape triangle triangle1"></div>
     <div class="shape triangle triangle2"></div>
@@ -51,12 +44,16 @@
     <div class="shape x-shape x-shape5"></div>
     <div class="shape x-shape x-shape6"></div>
   </div>
-  
+
   <!-- Contêiner para o conteúdo centralizado -->
   <div class="container">
     <!-- Formulário com o título dentro -->
     <form class="form" id="formCadastro">
-      <h1 class="title">PIRATE PASS</h1>
+      <div class="title-container">
+        <h1 class="title">PIRATE PASS</h1>
+        <img src="Ancora.png" alt="Âncora" class="pendulum">
+      </div>
+      <h2 class="subtitle">CADASTRO</h2>
       <input type="text" name="nome" class="input" placeholder="Digite seu nome" required>
       <input type="email" name="email" class="input" placeholder="Digite seu email" required>
       <input type="password" id="senha" class="input" placeholder="Digite sua senha" required>
@@ -69,7 +66,16 @@
     </form>
   </div>
 
+  <!-- Pop-up de erro -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup" class="close-button">&times;</span>
+      <h2>Erro no Cadastro</h2>
+      <p id="popupMessage"></p>
+    </div>
+  </div>
+
   <!-- Importando o arquivo JavaScript externo -->
-  <script src="validacao.js"></script>
+  <script src="cadastro.js"></script>
 </body>
 </html>
