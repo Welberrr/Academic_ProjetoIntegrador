@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pirate Pass - Login</title>
+  <title>Pirate Pass - Cadastro</title>
   <!-- Importando as fontes do Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Montserrat para o corpo, Pirata One para o título -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pirata+One&display=swap" rel="stylesheet">
-  <!-- Importando o arquivo CSS -->
-  <link rel="stylesheet" href="login.css">
+  <!-- Importando o arquivo CSS separado -->
+  <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
   <!-- Espaço para a logo no canto superior esquerdo -->
@@ -20,7 +20,8 @@
   </div>
 
   <!-- Formas geométricas de fundo -->
-  <div class="shapes">
+ <!-- Formas geométricas de fundo -->
+<div class="shapes">
     <!-- Triângulos -->
     <div class="shape triangle triangle1"></div>
     <div class="shape triangle triangle2"></div>
@@ -50,20 +51,25 @@
     <div class="shape x-shape x-shape5"></div>
     <div class="shape x-shape x-shape6"></div>
   </div>
-
+  
   <!-- Contêiner para o conteúdo centralizado -->
   <div class="container">
     <!-- Formulário com o título dentro -->
-    <form class="form">
+    <form class="form" id="formCadastro">
       <h1 class="title">PIRATE PASS</h1>
-      <input type="email" class="input" placeholder="Digite seu email" required>
-      <input type="password" class="input" placeholder="Digite sua senha" required>
-      <button type="submit">Entrar</button>
-      <!-- Texto de cadastro -->
+      <input type="text" name="nome" class="input" placeholder="Digite seu nome" required>
+      <input type="email" name="email" class="input" placeholder="Digite seu email" required>
+      <input type="password" id="senha" class="input" placeholder="Digite sua senha" required>
+      <input type="password" id="confirmarSenha" class="input" placeholder="Confirme sua senha" required>
+      <button type="submit">Cadastrar</button>
+      <!-- Texto de login -->
       <p class="signup-text">
-        Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui!</a>
+        Já tem uma conta? <a href="login.html">Faça login aqui!</a>
       </p>
     </form>
   </div>
+
+  <!-- Importando o arquivo JavaScript externo -->
+  <script src="validacao.js"></script>
 </body>
 </html>
