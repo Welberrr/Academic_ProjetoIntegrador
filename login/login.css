@@ -41,26 +41,6 @@ body {
   margin: 0; /* Remove margens padrão */
 }
 
-/* Estilos para a imagem da âncora */
-.pendulum {
-  width: 50px; /* Ajuste o tamanho conforme necessário */
-  margin-left: 20px; /* Ajuste do espaço entre o título e a imagem */
-  animation: pendulum-swing 2s infinite ease-in-out;
-  transform-origin: top center; /* Ponto de pivô para a rotação */
-}
-
-/* Animação do pêndulo */
-@keyframes pendulum-swing {
-  0% {
-    transform: rotate(15deg);
-  }
-  50% {
-    transform: rotate(-15deg);
-  }
-  100% {
-    transform: rotate(15deg);
-  }
-}
 
 /* Estilos do subtítulo */
 .subtitle {
@@ -222,28 +202,6 @@ button:hover {
 .shape {
   position: absolute;
   opacity: 0.5;
-}
-
-/* Animação de mudança de cor */
-@keyframes colorChangeSea {
-  0%   { background-color: #0077be; }
-  33%  { background-color: #00aaff; }
-  66%  { background-color: #005f8a; }
-  100% { background-color: #0077be; }
-}
-
-@keyframes colorChangeBorderSea {
-  0%   { border-bottom-color: #0077be; }
-  33%  { border-bottom-color: #00aaff; }
-  66%  { border-bottom-color: #005f8a; }
-  100% { border-bottom-color: #0077be; }
-}
-
-@keyframes colorChangeXSea {
-  0%   { color: #0077be; }
-  33%  { color: #00aaff; }
-  66%  { color: #005f8a; }
-  100% { color: #0077be; }
 }
 
 /* Triângulos */

@@ -39,25 +39,6 @@ body {
   margin: 0;
 }
 
-.pendulum {
-  width: 50px;
-  margin-left: 20px;
-  animation: pendulum-swing 2s infinite ease-in-out;
-  transform-origin: top center;
-}
-
-@keyframes pendulum-swing {
-  0% {
-    transform: rotate(15deg);
-  }
-  50% {
-    transform: rotate(-15deg);
-  }
-  100% {
-    transform: rotate(15deg);
-  }
-}
-
 /* Subtítulo */
 .subtitle {
   font-size: 50px;
