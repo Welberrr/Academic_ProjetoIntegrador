@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos</title>
+    <link rel="stylesheet" href="pagamentos/trocar-plano.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-e-nome">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Xbox">
+            </a>
+            <span>PASSE PIRATA</span>
+        </div>
+        <a class="logx" href="Log out">SAIR</a>
+    </header>
+
+    <section class="conteudo">
+        <div class="plano-atual">
+            <h2>Plano Atual</h2>
+            <div id="plano-atual">
+                <!-- Informações do plano atual serão inseridas aqui -->
+            </div>
+        </div>
+
+        <div class="planos-disponiveis">
+            <h2>Planos Disponíveis</h2>
+            <div id="planos-disponiveis">
+                <!-- Informações dos planos disponíveis serão inseridas aqui -->
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()" aria-label="Fechar Modal">&times;</span>
+            <h3 id="planoSelecionado"></h3>
+            <p id="precoSelecionado">Escolha a forma de pagamento</p>
+            <div class="tab-content" id="salvos">
+                <!-- Cartões salvos serão inseridos aqui -->
+            </div>
+            <button class="botao-comprar" id="comprarPlanoButton" style="display:none;">Comprar o Plano</button>
+        </div>
+    </div>
+    <nav class="menu-lateral">
+        <ul>
+            <li class="menu-item">
+                <a href="tela-perfil.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/chapeu-de-pirata.png" alt=""></span>
+                    <span class="txt-link">Meu Perfil</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="amigos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/bandeira-pirata.png" alt=""></span>
+                    <span class="txt-link">Amigos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="planos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/mapa-do-tesouro.png" alt=""></i></span>
+                    <span class="txt-link">Planos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="dispositivos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/gancho.png" alt=""></span>
+                    <span class="txt-link">Dispositivos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="meus-pagamentos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/bau.png" alt=""></span>
+                    <span class="txt-link">Meus Pagamentos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>
+<script src="idLogin.js"></script>
+<script src="pagamentos/trocar-plano.js"></script>

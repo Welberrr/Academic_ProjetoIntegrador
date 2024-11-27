@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Screen</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="tela-perfil/tela-perfil.css">
+</head>
+
+<body>
+
+    <div class="bloco-msg-topo" style="display: none;">
+        <span class="msg-topo"></span>
+    </div>
+
+    <div class="janela-modal" style="display: none;">
+
+        <div class="modal-excluir-conta" style="display: none;">
+            <p>Digite a senha para confirmar. Essa ação não poderá ser revertida.</p>
+            <div class="input-passw-box">
+                <input id="senha-para-exclusao" type="password">
+                <i class="bi bi-eye-slash"></i>
+                <span id="msg-erro-exclusao">texto</span>
+            </div>
+            <div>
+                <button class="btn-cancelar-exclusao">Cancelar</button>
+                <button class="btn-confirmar-exclusao">Excluir conta</button>
+            </div>
+        </div>
+
+        <div class="modal-foto" style="display: none;">
+            <div class="opcoes-fotos">
+                <button><input id="upload-foto" type="file"><i class="bi bi-upload"></i></button>
+
+            </div>
+            <div class="container-foto-atual">
+                <div>
+                    <img id="foto-atual"
+                        src="https://th.bing.com/th/id/OIP.AvFCDidOSeResW3k31eCdQHaHa?rs=1&pid=ImgDetMain" alt="">
+                    <span>Minha foto</span>
+                </div>
+                <div>
+                    <button class="btn-confirmar-fp">Confirmar</button>
+                    <button class="btn-cancelar-fp">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div></div>
+
+    <header>
+
+        <div class="logo-e-nome">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Xbox">
+            </a>
+            <span>PASSE PIRATA</span>
+        </div>
+
+        <a class="logx" href="Log out">Log out</a>
+
+    </header>
+
+    <nav class="menu-lateral">
+        <ul>
+            <hr>
+            <li class="menu-item">
+                <a href="tela-perfil.html">
+                    <span class="menu-icon"><i class="bi bi-person-circle"></i></span>
+                    <span class="txt-link">Meu Perfil</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="dispositivos.html">
+                    <span class="menu-icon"><i class="bi bi-controller"></i></span>
+                    <span class="txt-link">Dispositivos</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="amigos.html">
+                    <span class="menu-icon"><i class="bi bi-people-fill"></i></span>
+                    <span class="txt-link">Amigos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="planos.html">
+                    <span class="menu-icon"><i class="bi bi-gem"></i></span>
+                    <span class="txt-link">Planos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="pagamentos.html">
+                    <span class="menu-icon"><i class="bi bi-piggy-bank"></i></span>
+                    <span class="txt-link">Meus Pagamentos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <article class="conteudo" style="display: flex;">
+
+        <section class="card-perfil">
+
+            <div class="fundo-perfil">
+            </div>
+
+            <div class="foto-perfil">
+                <img id="foto-usuario" src="" alt="">
+                <div class="editar-foto">
+                    <i class="bi bi-pencil-square"></i>
+                </div>
+            </div>
+
+            <div class="info-perfil">
+                <div class="nome-username">
+                    <span class="nome-usuario"></span>
+                    <span class="username-usuario"></span>
+                </div>
+
+                <span class="plano"></span>
+            </div>
+
+            <nav>
+                <ul>
+                    <li class="nav-jogos-fav li-selecionada">Jogos favoritos</li>
+                    <li class="nav-amigos">Amigos</li>
+                    <li class="nav-avaliacoes">Avaliações</li>
+                    <li class="nav-meus-dados">Meus dados</li>
+                </ul>
+            </nav>
+
+            <section class="jogos-favoritos" style="display: flex;">
+            </section>
+
+            <section class="amigos" style="display: none;">
+                <ul id="aba-lista-amigos">
+                </ul>
+            </section>
+
+            <section class="avaliacoes" style="display: none;">
+                <ul id="lista-avaliacoes">
+                </ul>
+            </section>
+
+            <section class="meus-dados" style="display: none;">
+                <div class="mostra-dados" style="display: flex;">
+                    <span class="label">Nome do usuário</span>
+                    <span class="dado name-value"></span>
+
+                    <span class="label">Username</span>
+                    <span class="dado username-value"></span>
+
+                    <span class="label">E-mail</span>
+                    <span class="dado email-value"></span>
+
+                    <span class="label">Data de Nascimento</span>
+                    <span class="dado dn-value"></span>
+
+                    <div>
+                        <button class="btn-alterar-dados">Alterar meus dados</button>
+                        <button class="btn-alterar-senha">Alterar minha senha</button>
+                        <button class="btn-deletar-conta">Apagar minha conta</button>
+                    </div>
+                </div>
+
+                <div class="editar-dados" style="display: none">
+                    <label for="name">Nome do usuário</label>
+                    <input type="text" class="input-edicao" id="name" name="name">
+                    <span class="msg"></span>
+
+                    <label for="username">Username</label>
+                    <input type="text" class="input-edicao" id="username" name="username">
+                    <span class="msg"></span>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" class="input-edicao" id="email" name="email">
+                    <span class="msg"></span>
+
+                    <div>
+                        <button class="btn-concluir">Concluir</button>
+                        <button class="btn-cancelar">Cancelar</button>
+                    </div>
+
+
+                </div>
+
+                <div class="editar-senha" style="display: none">
+                    <label class="label">Senha atual</label>
+                    <input type="password" class="input-edicao" id="senha-atual" maxlength="8">
+                    <span class="msg"></span>
+
+                    <label class="label">Nova senha</label>
+                    <input type="password" class="input-edicao" id="nova-senha" maxlength="8">
+                    <span class="msg"></span>
+
+                    <label class="label">Confirmar nova senha</label>
+                    <input type="password" class="input-edicao" id="conf-nova-senha" maxlength="8">
+                    <span class="msg"></span>
+
+                    <div>
+                        <button class="btn-concluir">Concluir</button>
+                        <button class="btn-cancelar">Cancelar</button>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <aside class="container-amigos">
+            <span class="titulo-amigos">Amigos</span>
+            <div class="input-box">
+                <i class="bi bi-search"></i>
+                <input id="friend-search" type="text" placeholder="Pesquise pelo username">
+            </div>
+            <ul id="lista-amigos">
+            </ul>
+        </aside>
+
+    </article>
+    <nav class="menu-lateral">
+        <ul>
+            <li class="menu-item">
+                <a href="tela-perfil.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/chapeu-de-pirata.png" alt=""></span>
+                    <span class="txt-link">Meu Perfil</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="amigos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/bandeira-pirata.png" alt=""></span>
+                    <span class="txt-link">Amigos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="planos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/mapa-do-tesouro.png" alt=""></i></span>
+                    <span class="txt-link">Planos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="dispositivos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/gancho.png" alt=""></span>
+                    <span class="txt-link">Dispositivos</span>
+                </a>
+            </li>
+            <hr>
+            <li class="menu-item">
+                <a href="meus-pagamentos.html">
+                    <span class="menu-icon"><img src="../img/icones-menu/bau.png" alt=""></span>
+                    <span class="txt-link">Meus Pagamentos</span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+    <!-- <script src="idLogin.js"></script> -->
+    <script src="tela-perfil/tperfil-personalizacao.js"></script>
+    <script src="tela-perfil/tela-perfil.js"></script>
+</body>
+
+</html>

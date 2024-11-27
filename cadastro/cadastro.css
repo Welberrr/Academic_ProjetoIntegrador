@@ -4,7 +4,6 @@ body {
   min-height: 100vh;
   background: linear-gradient(to bottom, #0077be, #001f3f);
   position: relative;
-  overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -14,7 +13,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
 }
 
 /* Título e imagem da âncora */
@@ -56,11 +54,11 @@ body {
 
 /* Formulário */
 .form {
-  width: 35vw;
+  width: 25vw; /* Reduzido de 35vw para 25vw */
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 3vw 2vw;
+  padding: 2vw 1.5vw; /* Ajustado para manter proporções */
   background: rgba(11, 36, 71, 0.9);
   border-radius: 10px;
   overflow: hidden;
@@ -73,28 +71,19 @@ body {
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   animation: form-animation 0.5s ease-in-out;
   align-items: center;
-}
-
-@keyframes form-animation {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  max-height: fit-content;
+  margin: 30px 0 30px 0;
 }
 
 /* Inputs */
 .input {
   width: 100%;
-  padding: 1.5vw 1vw;
+  padding: 1vw 0.8vw; /* Ajustado para manter proporção */
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid #3b8df2;
   color: #fff;
-  font-size: 1.2vw;
+  font-size: 1vw; /* Reduzido de 1.2vw para 1vw */
   transition: all 0.3s ease-in-out;
   box-shadow:
     rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -104,7 +93,7 @@ body {
 
 .input::placeholder {
   color: #fff;
-  font-size: 1.2vw;
+  font-size: 1vw; /* Reduzido de 1.2vw para 1vw */
 }
 
 .input:hover,
@@ -119,12 +108,12 @@ body {
 /* Botão */
 button {
   width: 100%;
-  padding: 1vw 2vw;
+  padding: 0.8vw 1.5vw; /* Ajustado para manter proporção */
   border: none;
   border-radius: 5px;
   background-color: #0077be;
   color: #fff;
-  font-size: 1.6vw;
+  font-size: 1.4vw; /* Reduzido de 1.6vw para 1.4vw */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow:
@@ -136,7 +125,7 @@ button {
 
 button:hover {
   background-color: #005f8a;
-  font-size: 1.7vw;
+  font-size: 1.5vw; /* Ajustado para manter proporção */
   transform: scale(1.05);
   box-shadow:
     rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -149,7 +138,7 @@ button:hover {
   margin-top: 20px;
   text-align: center;
   color: #fff;
-  font-size: 1.2vw;
+  font-size: 1vw; /* Ajustado para manter proporção */
 }
 
 .signup-text a {
@@ -161,7 +150,142 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Estilos das formas geométricas */
+/* Pop-up de erro */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 50, 0.8);
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  background-color: #0b2447;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #3b8df2;
+  width: 30%;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  animation: popup-animation 0.5s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.popup-content h2 {
+  font-family: 'Pirata One', cursive;
+  margin-bottom: 20px;
+  font-size: 2vw;
+}
+
+.popup-content p {
+  font-size: 1.2vw;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form {
+    width: 90%; /* Aumentado para 90% */
+    padding: 4vw 2vw;
+  }
+  .title {
+    font-size: 8vw; /* Ajustado para melhor proporção */
+  }
+  .subtitle {
+    font-size: 6vw;
+  }
+  .input {
+    font-size: 3.5vw;
+    padding: 2.5vw 1.5vw;
+  }
+  .input::placeholder {
+    font-size: 3.5vw;
+  }
+  button {
+    font-size: 4.5vw;
+    padding: 2.5vw 1.5vw;
+  }
+  .signup-text {
+    font-size: 3.5vw;
+  }
+  .popup-content {
+    width: 80%;
+  }
+  .popup-content h2 {
+    font-size: 4.5vw;
+  }
+  .popup-content p {
+    font-size: 2.5vw;
+  }
+  .close-button {
+    font-size: 4.5vw;
+  }
+}
+
+.popup-content h2 {
+  font-family: 'Pirata One', cursive;
+  margin-bottom: 20px;
+  font-size: 2vw;
+}
+
+.popup-content p {
+  font-size: 1.2vw;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form {
+    width: 80%;
+    padding: 5vw 3vw;
+  }
+  .title {
+    font-size: 10vw;
+  }
+  .subtitle {
+    font-size: 7vw;
+  }
+  .input {
+    font-size: 4vw;
+    padding: 3vw 2vw;
+  }
+  button {
+    font-size: 5vw;
+    padding: 3vw 2vw;
+  }
+  .signup-text {
+    font-size: 4vw;
+  }
+  .popup-content {
+    width: 80%;
+  }
+  .popup-content h2 {
+    font-size: 5vw;
+  }
+  .popup-content p {
+    font-size: 3vw;
+  }
+  .close-button {
+    font-size: 5vw;
+  }
+}
+
+
 .shapes {
   position: absolute;
   top: 0;
@@ -175,28 +299,6 @@ button:hover {
 .shape {
   position: absolute;
   opacity: 0.5;
-}
-
-/* Animação de mudança de cor */
-@keyframes colorChangeSea {
-  0%   { background-color: #0077be; }
-  33%  { background-color: #00aaff; }
-  66%  { background-color: #005f8a; }
-  100% { background-color: #0077be; }
-}
-
-@keyframes colorChangeBorderSea {
-  0%   { border-bottom-color: #0077be; }
-  33%  { border-bottom-color: #00aaff; }
-  66%  { border-bottom-color: #005f8a; }
-  100% { border-bottom-color: #0077be; }
-}
-
-@keyframes colorChangeXSea {
-  0%   { color: #0077be; }
-  33%  { color: #00aaff; }
-  66%  { color: #005f8a; }
-  100% { color: #0077be; }
 }
 
 /* Triângulos */
@@ -547,101 +649,4 @@ button:hover {
 @keyframes move24 {
   0% { transform: translate(0, 0) rotate(0deg); }
   100% { transform: translate(-25vw, -15vh) rotate(-360deg); }
-}
-
-
-/* Pop-up de erro */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 50, 0.8);
-  z-index: 1000;
-}
-
-.popup-content {
-  position: relative;
-  background-color: #0b2447;
-  margin: 10% auto;
-  padding: 20px;
-  border: 2px solid #3b8df2;
-  width: 30%;
-  border-radius: 10px;
-  text-align: center;
-  color: #fff;
-  animation: popup-animation 0.5s ease-in-out;
-  box-shadow:
-    rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-@keyframes popup-animation {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: #fff;
-  font-size: 2vw;
-  cursor: pointer;
-}
-
-.popup-content h2 {
-  font-family: 'Pirata One', cursive;
-  margin-bottom: 20px;
-  font-size: 2vw;
-}
-
-.popup-content p {
-  font-size: 1.2vw;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .form {
-    width: 80%;
-    padding: 5vw 3vw;
-  }
-  .title {
-    font-size: 10vw;
-  }
-  .subtitle {
-    font-size: 7vw;
-  }
-  .input {
-    font-size: 4vw;
-    padding: 3vw 2vw;
-  }
-  button {
-    font-size: 5vw;
-    padding: 3vw 2vw;
-  }
-  .signup-text {
-    font-size: 4vw;
-  }
-  .popup-content {
-    width: 80%;
-  }
-  .popup-content h2 {
-    font-size: 5vw;
-  }
-  .popup-content p {
-    font-size: 3vw;
-  }
-  .close-button {
-    font-size: 5vw;
-  }
 }
